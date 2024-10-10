@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcryptjs');
 
 module.exports = function (Userlogin) {
   Userlogin.customLogin = async function (params, res) {
@@ -19,6 +20,7 @@ module.exports = function (Userlogin) {
         defaultError.statusCode = 409;
         return defaultError;
       } else {
+        // const isPasswordMatched = bcrypt.compareSync(password, userDetails.password);
         if (userDetails.password === password) {
           const result = { ...userDetails?.__data };
           delete result['password'];
