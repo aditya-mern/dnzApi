@@ -1,0 +1,52 @@
+{
+  "name": "blockCoordinator",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "stateId": {
+      "type": "string",
+      "required": true
+    },
+    "districtId": {
+      "type": "string",
+      "required": true
+    },
+    "bcName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "districtCoordinator": {
+      "type": "belongsTo",
+      "model": "districtCoordinator",
+      "foreignKey": "dcId"
+    },
+    "stateCoordinator": {
+      "type": "belongsTo",
+      "model": "stateCoordinator",
+      "foreignKey": "scId"
+    },
+    "block": {
+      "type": "belongsTo",
+      "model": "block",
+      "foreignKey": "blockId"
+    },
+    "district": {
+      "type": "belongsTo",
+      "model": "district",
+      "foreignKey": "districtId"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "state",
+      "foreignKey": "stateId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

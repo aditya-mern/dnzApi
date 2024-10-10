@@ -1,0 +1,102 @@
+{
+  "name": "userLogin",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "gdName": {
+      "type": "string",
+      "required": true
+    },
+    "designation": {
+      "type": "string",
+      "required": true,
+      "default": "GD"
+    },
+    "gdType": {
+      "type": "string"
+    },
+    "stateId": {
+      "type": "string",
+      "required": true
+    },
+    "districtId": {
+      "type": "string",
+      "required": true
+    },
+    "blockId": {
+      "type": "string",
+      "required": true
+    },
+    "scId": {
+      "type": "string",
+      "required": true
+    },
+    "dcId": {
+      "type": "string",
+      "required": true
+    },
+    "bcId": {
+      "type": "string",
+      "required": true
+    },
+    "villageIds": {
+      "type": [
+        "string"
+      ]
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "viewPassword": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "state": {
+      "type": "belongsTo",
+      "model": "state",
+      "foreignKey": "stateId"
+    },
+    "district": {
+      "type": "belongsTo",
+      "model": "district",
+      "foreignKey": "districtId"
+    },
+    "block": {
+      "type": "belongsTo",
+      "model": "block",
+      "foreignKey": "blockId"
+    },
+    "stateCoordinator": {
+      "type": "belongsTo",
+      "model": "stateCoordinator",
+      "foreignKey": "scId"
+    },
+    "districtCoordinator": {
+      "type": "belongsTo",
+      "model": "districtCoordinator",
+      "foreignKey": "dcId"
+    },
+    "blockCoordinator": {
+      "type": "belongsTo",
+      "model": "blockCoordinator",
+      "foreignKey": "bcId"
+    },
+    "villages": {
+      "type": "hasMany",
+      "model": "village",
+      "foreignKey": "villageId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

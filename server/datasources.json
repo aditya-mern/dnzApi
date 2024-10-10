@@ -1,0 +1,17 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "dnz": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "dnz",
+    "password": "",
+    "name": "dnz",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}

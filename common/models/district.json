@@ -1,0 +1,28 @@
+{
+  "name": "district",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "stateId": {
+      "type": "string",
+      "required": true
+    },
+    "districtName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "state": {
+      "type": "belongsTo",
+      "model": "state",
+      "foreignKey": "stateId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

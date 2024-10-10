@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "dnz"
+  },
+  "AccessToken": {
+    "dataSource": "dnz",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "dnz",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "dnz",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "dnz",
+    "public": false
+  },
+  "Message": {
+    "dataSource": null
+  },
+  "state": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "district": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "block": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "village": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "stateCoordinator": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "districtCoordinator": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "blockCoordinator": {
+    "dataSource": "dnz",
+    "public": true
+  },
+  "userLogin": {
+    "dataSource": "dnz",
+    "public": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "districtCoordinator",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "stateId": {
+      "type": "string",
+      "required": true
+    },
+    "dcName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stateCoordinator": {
+      "type": "belongsTo",
+      "model": "stateCoordinator",
+      "foreignKey": "scId"
+    },
+    "district": {
+      "type": "belongsTo",
+      "model": "district",
+      "foreignKey": "districtId"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "state",
+      "foreignKey": "stateId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

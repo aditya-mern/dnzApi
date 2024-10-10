@@ -1,0 +1,46 @@
+{
+  "name": "village",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "stateId": {
+      "type": "string",
+      "required": true
+    },
+    "districtId": {
+      "type": "string",
+      "required": true
+    },
+    "blockId": {
+      "type": "string",
+      "required": true
+    },
+    "villageName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "block": {
+      "type": "belongsTo",
+      "model": "block",
+      "foreignKey": "blockId"
+    },
+    "district": {
+      "type": "belongsTo",
+      "model": "district",
+      "foreignKey": "districtId"
+    },
+    "state": {
+      "type": "belongsTo",
+      "model": "state",
+      "foreignKey": "stateId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
