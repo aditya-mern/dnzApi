@@ -24,12 +24,12 @@
     "districtCoordinator": {
       "type": "belongsTo",
       "model": "districtCoordinator",
-      "foreignKey": "dcId"
+      "foreignKey": "dlId"
     },
     "stateCoordinator": {
       "type": "belongsTo",
       "model": "stateCoordinator",
-      "foreignKey": "scId"
+      "foreignKey": "smId"
     },
     "block": {
       "type": "belongsTo",

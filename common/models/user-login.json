@@ -6,14 +6,17 @@
     "validateUpsert": true
   },
   "properties": {
-    "gdName": {
+    "name": {
       "type": "string",
       "required": true
     },
     "designation": {
       "type": "string",
       "required": true,
-      "default": "GD"
+      "default": "CHW"
+    },
+    "designationName": {
+      "type": "string"
     },
     "gdType": {
       "type": "string"
@@ -23,24 +26,20 @@
       "required": true
     },
     "districtId": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "blockId": {
+      "type": "string"
+    },
+    "smId": {
       "type": "string",
       "required": true
     },
-    "scId": {
-      "type": "string",
-      "required": true
+    "dlId": {
+      "type": "string"
     },
-    "dcId": {
-      "type": "string",
-      "required": true
-    },
-    "bcId": {
-      "type": "string",
-      "required": true
+    "boId": {
+      "type": "string"
     },
     "villageIds": {
       "type": [
@@ -79,17 +78,17 @@
     "stateCoordinator": {
       "type": "belongsTo",
       "model": "stateCoordinator",
-      "foreignKey": "scId"
+      "foreignKey": "smId"
     },
     "districtCoordinator": {
       "type": "belongsTo",
       "model": "districtCoordinator",
-      "foreignKey": "dcId"
+      "foreignKey": "dlId"
     },
     "blockCoordinator": {
       "type": "belongsTo",
       "model": "blockCoordinator",
-      "foreignKey": "bcId"
+      "foreignKey": "boId"
     },
     "villages": {
       "type": "hasMany",
@@ -97,6 +96,14 @@
       "foreignKey": "villageId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "customLogin"
+    }
+  ],
   "methods": {}
 }

@@ -20,7 +20,7 @@
     "stateCoordinator": {
       "type": "belongsTo",
       "model": "stateCoordinator",
-      "foreignKey": "scId"
+      "foreignKey": "smId"
     },
     "district": {
       "type": "belongsTo",
